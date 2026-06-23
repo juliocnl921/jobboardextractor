@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Extractor",
+  "version": "1.0",
+  "description": "Extract url and body from jobboards",
+  "permissions": ["activeTab", "scripting","storage","downloads"],
+  "host_permissions": ["https://*/*","http://*/*"],
+  "action": {"default_popup": "popup.html"},
+  "background": {"service_worker": "background.js","type": "module"}
+}

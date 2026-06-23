@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { font-family: Arial; width: 40rem; background: #121212; color: #fff; }
+    textarea { width: 100%; height: 8rem; background: #222; color: #fff; }
+    button { padding: 0.5rem; background: #333; color: #fff; border: 1px solid #555; }
+    table { width: 100%; margin-bottom: 10rem; }
+  </style>
+</head>
+<body>
+  <button id="clean">Clear urls</button>
+  <button id="add">Search urls</button>
+  <button id="edit">Edit and save urls</button>
+  <div id="total">0</div>
+  <textarea id="jobs"></textarea>
+  <button id="run">Run (visit and extract data)</button>
+  <button id="download">Download data</button>
+  <div id="state"></div>
+  <textarea id="log"></textarea>
+  <textarea id="last"></textarea>
+
+  <script src="popup.js"></script>
+</body>
+</html>
