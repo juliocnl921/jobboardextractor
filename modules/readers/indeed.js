@@ -5,11 +5,11 @@ const SOURCE = 'indeed'
 function bodyReader(){
     const headerContainer = document.querySelector('.jobsearch-InfoHeaderContainer');
     let header = ""
-    if (headerContainer)  header = headerContainer.textContent.trim();
+    if (headerContainer)  header = headerContainer.innerText.trim() //.textContent.trim();
 
     const descriptionContainer = document.querySelector('.jobsearch-BodyContainer');
     let description = ""
-    if (descriptionContainer)  description = descriptionContainer.textContent.trim();
+    if (descriptionContainer)  description = descriptionContainer.innerText.trim() //.textContent.trim();
     
     return {header, description}
 }

@@ -13,7 +13,6 @@ export function emptyState(){
   return {running: false, jobs:[]}
 }
 export function newJob(url, source) {
-  //const source="linkedin"//TODO
   return {url, source, header:'', description:'', error:''}
 }
 
