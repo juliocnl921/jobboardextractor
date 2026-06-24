@@ -7,8 +7,10 @@ function bodyReader(){
     let header = ""
     if (headerContainer)  header = headerContainer.textContent.trim();
 
+    const descriptionContainer = document.querySelector('.jobsearch-BodyContainer');
     let description = ""
-
+    if (descriptionContainer)  description = descriptionContainer.textContent.trim();
+    
     return {header, description}
 }
 
