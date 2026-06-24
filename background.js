@@ -57,7 +57,7 @@ async function process(sendResponse, config){
       let toExecute = () => {return {header:"", description:""}}
 
       for (const reader of jobBoardsReaders) {
-        if (state.jobs[i].type == reader.type) toExecute = reader.body
+        if (state.jobs[i].source == reader.source) toExecute = reader.body
       }
 
       const [res] = await chrome.scripting.executeScript({target: { tabId:tab.id} , func:toExecute})

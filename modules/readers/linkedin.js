@@ -1,6 +1,6 @@
 import { newJob } from '../state.js';
 
-const TYPE = 'linkedin'
+const SOURCE = 'linkedin'
 
 function bodyReader(){
     const section = document.querySelector('section[aria-label="Contenido principal"]');
@@ -13,8 +13,8 @@ function bodyReader(){
 function urlReader(url) {
     const regex = /https:\/\/www\.linkedin\.com\/jobs\/view\/\d+/;
     const match = url.match(regex);
-    if (match) return newJob(match[0], TYPE)
+    if (match) return newJob(match[0], SOURCE)
     return undefined
 }
 
-export const linkedinReader = {type: TYPE, body: bodyReader, url: urlReader}
+export const linkedinReader = {source: SOURCE, body: bodyReader, url: urlReader}

@@ -2,7 +2,7 @@
  * Job format:
  * {
  *   url: string,
- *   type: 'linkedin' | 'indeed' | 'computrabajo',
+ *   source: 'linkedin' | 'indeed' | 'computrabajo',
  *   header: string,
  *   description: string,
  *   error: string
@@ -12,9 +12,9 @@
 export function emptyState(){
   return {running: false, jobs:[]}
 }
-export function newJob(url, type) {
-  //const type="linkedin"//TODO
-  return {url, type, header:'', description:'', error:''}
+export function newJob(url, source) {
+  //const source="linkedin"//TODO
+  return {url, source, header:'', description:'', error:''}
 }
 
 export async function getState(){

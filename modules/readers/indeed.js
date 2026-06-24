@@ -1,6 +1,6 @@
 import { newJob } from '../state.js';
 
-const TYPE = 'indeed'
+const SOURCE = 'indeed'
 
 function bodyReader(){
     const headerContainer = document.querySelector('.jobsearch-InfoHeaderContainer');
@@ -21,10 +21,10 @@ function urlReader(url) {
     ]
     
     for (const pattern of patterns) {
-        if (url.match(pattern)) return newJob(url, TYPE)
+        if (url.match(pattern)) return newJob(url, SOURCE)
     }
 
     return undefined
 }
 
-export const indeedReader = { type: TYPE, body: bodyReader, url: urlReader}
+export const indeedReader = { source: SOURCE, body: bodyReader, url: urlReader}
