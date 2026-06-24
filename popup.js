@@ -11,7 +11,10 @@ function getElement(name){
 }
 
 function findjobsInInput(){
-  return getElement("jobs").value.split(/\r?\n/).map(x => x.trim()).filter(x => x !== "");
+  return getElement("jobs").value
+    .split(/\r?\n/)
+    .map(x => x.trim())
+    .filter(x => x !== "");
 }
 
 async function findjobsInTab(){
