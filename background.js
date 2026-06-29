@@ -39,7 +39,7 @@ async function edit(urls){
 async function process(sendResponse, config){
   const state = await getState()
   state.running = true
-
+  await setState(state);
   for (let i = 0; i < state.jobs.length; i++) {
     try {
 

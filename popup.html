@@ -5,6 +5,7 @@
     body { font-family: Arial; width: 40rem; background: #121212; color: #fff; }
     textarea { width: 100%; height: 8rem; background: #222; color: #fff; }
     button { padding: 0.5rem; background: #333; color: #fff; border: 1px solid #555; }
+    input { width: 3rem; background: #222; color: #fff; }
     table { width: 100%; margin-bottom: 10rem; }
   </style>
 </head>
@@ -14,6 +15,8 @@
   <button id="edit">Edit and save urls</button>
   <div id="total">0</div>
   <textarea id="jobs"></textarea>
+  <input id="minimum" type="numeric" value="5000"></input>
+  <input id="maximum" type="numeric" value="10000"></input>
   <button id="run">Run (visit and extract data)</button>
   <button id="download">Download data</button>
   <div id="state"></div>

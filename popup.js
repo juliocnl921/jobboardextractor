@@ -26,7 +26,14 @@ async function findjobsInTab(){
     function: () => {
       const anchors = document.querySelectorAll("a[href]");
       if (!anchors || anchors.length === 0) return [];
-      return Array.from(anchors).map(a => a.href).filter(Boolean);
+      return Array.from(anchors)
+        // .filter(a => {
+        //   if (a.href.includes("jobs.lever.co/bluelightconsulting")) return a.innerText.trim().toLowerCase().includes("mexico")
+        //   else return true
+        //   return true
+        // })
+        .map(a => a.href)
+        .filter(Boolean);
     }
   });
   return results?.[0]?.result ?? [];
@@ -89,7 +96,10 @@ getElement("edit").addEventListener("click", async () => {
 getElement("run").addEventListener("click", async () => {
   const urls = await findjobsInInput()
   await chrome.runtime.sendMessage({action: "edit", urls: urls });
-  const config ={duration:{min:5000, max:10000} }
+
+  const min = Number(getElement("minimum").value)
+  const max = Number(getElement("maximum").value)
+  const config ={duration:{min, max} }
   await chrome.runtime.sendMessage({action: "process", config});
 });
 
